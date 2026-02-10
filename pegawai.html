@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Pegawai - Kantor Kecamatan Siberut Selatan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pegawai.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-logo">
+                <img src="logo_kantor.png" alt="Logo Kecamatan">
+                <div class="logo-text">
+                    <h1>Kantor Kecamatan</h1>
+                    <p>Siberut Selatan</p>
+                </div>
+            </div>
+            <div class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="tentang.html">Tentang</a></li>
+                    <li><a href="struktur.html">Struktur</a></li>
+                    <li><a href="pegawai.html" class="active">Pegawai</a></li>
+                    <li><a href="dokumentasi.html">Dokumentasi</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Data Pegawai</h1>
+            <p>Informasi lengkap pegawai Kantor Kecamatan Siberut Selatan</p>
+        </div>
+    </section>
+
+    <!-- Pegawai Section -->
+    <section class="pegawai">
+        <div class="container">
+            <div class="pegawai-header">
+                <div class="pegawai-stats">
+                    <div class="stat-card">
+                        <h3>28</h3>
+                        <p>Total Pegawai</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>17</h3>
+                        <p>PNS</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>11</h3>
+                        <p>Non-PNS</p>
+                    </div>
+                </div>
+                
+                <div class="search-filter">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="pegawaiSearch" placeholder="Cari pegawai">
+                    </div>
+                    
+                    <div class="filter-options">
+                        <select id="jabatanFilter">
+                            <option value="all">Semua Jabatan</option>
+                            <option value="camat">Camat</option>
+                            <option value="sekretaris">Sekretaris</option>
+                            <option value="kasi">Penata Tingkat I</option>
+                            <option value="kasi">Penata Muda Tingkat I</option>
+                            <option value="kasi">Penata Muda</option>
+                            <option value="kasi">Pengatur Tingkat I</option>
+                            <option value="kasi">Pengatur</option>
+                            <option value="staff">Staf</option>
+                        </select>
+                        
+                        <select id="golonganFilter">
+                            <option value="all">Semua Golongan</option>
+                            <option value="IV">Golongan IV</option>
+                            <option value="III">Golongan III</option>
+                            <option value="II">Golongan II</option>
+                            <option value="I">Golongan I</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="table-responsive">
+                <table class="pegawai-table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama Pegawai</th>
+                            <th>Pangkat/Golongan</th>
+                            <th>NIP/NRPH</th>
+                            <th>Jabatan</th>
+                        </tr>
+                    </thead>
+                    <tbody id="pegawaiTableBody">
+                        <!-- Data akan diisi oleh JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="pagination">
+                <button id="prevPage" disabled><i class="fas fa-chevron-left"></i> Sebelumnya</button>
+                <div class="page-numbers">
+                    <span class="page-number active">1</span>
+                    <span class="page-number">2</span>
+                    <span class="page-number">3</span>
+                </div>
+                <button id="nextPage">Selanjutnya <i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="logo_kantor.png" alt="Logo Kecamatan">
+                        <div class="footer-logo-text">
+                            <h3>Kantor Kecamatan</h3>
+                            <p>Siberut Selatan</p>
+                        </div>
+                    </div>
+                    <p>Melayani masyarakat dengan integritas, profesionalisme, dan dedikasi tinggi untuk kemajuan Siberut Selatan.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Link Cepat</h4>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="tentang.html">Tentang Kami</a></li>
+                        <li><a href="struktur.html">Struktur Organisasi</a></li>
+                        <li><a href="pegawai.html">Data Pegawai</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Layanan</h4>
+                    <ul>
+                        <li><a href="#">Administrasi Kependudukan</a></li>
+                        <li><a href="#">Pelayanan Masyarakat</a></li>
+                        <li><a href="#">Perizinan & Non-Perizinan</a></li>
+                        <li><a href="#">Pengaduan Masyarakat</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Kontak Kami</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Jl. Raya Maileppet-Muara Siberut, Mentawai, Sumatera Barat</li>
+                        <li><i class="fas fa-phone"></i> (0759) 21017</li>
+                        <li><i class="fas fa-envelope"></i> siberutselatan@064@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Kantor Kecamatan Siberut Selatan. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="pegawai.js"></script>
+</body>
+</html>

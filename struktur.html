@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Struktur Organisasi - Kantor Kecamatan Siberut Selatan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .org-chart {
+            margin: 50px 0;
+            overflow-x: auto;
+        }
+        
+        .chart-container {
+            min-width: 800px;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .org-level-1 {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .org-level-1 .person {
+            display: inline-block;
+            background: #2E7D32;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 250px;
+            box-shadow: 0 4px 8px rgba(46, 125, 50, 0.2);
+        }
+        
+        .org-level-2 {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .org-level-2::before {
+            content: '';
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 25px;
+            background: #ccc;
+        }
+        
+        .org-level-2 .person {
+            background: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            width: 220px;
+            margin: 0 15px;
+            box-shadow: 0 4px 8px rgba(76, 175, 80, 0.2);
+        }
+        
+        .org-level-3 {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .org-level-3 .person {
+            background: #81C784;
+            color: #333;
+            padding: 12px;
+            border-radius: 8px;
+            width: 200px;
+            box-shadow: 0 3px 6px rgba(129, 199, 132, 0.2);
+        }
+        
+        .person h4 {
+            margin: 0 0 5px 0;
+            font-size: 16px;
+        }
+        
+        .person p {
+            margin: 0;
+            font-size: 14px;
+        }
+        
+        .chart-line {
+            height: 30px;
+            width: 2px;
+            background: #ccc;
+            margin: 0 auto;
+        }
+        
+        .chart-line.horizontal {
+            width: 100%;
+            height: 2px;
+            margin: 20px 0;
+        }
+        
+        .struktur-details {
+            margin-top: 50px;
+        }
+        
+        .detail-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 4px solid #2E7D32;
+        }
+        
+        .detail-card h3 {
+            color: #2E7D32;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        
+        .detail-card ul {
+            padding-left: 20px;
+        }
+        
+        .detail-card li {
+            margin-bottom: 8px;
+        }
+        
+        @media (max-width: 992px) {
+            .org-level-2 {
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+            }
+            
+            .org-level-2::before {
+                display: none;
+            }
+            
+            .org-level-2 .person {
+                margin: 0;
+            }
+            
+            .chart-container {
+                min-width: auto;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-logo">
+                <img src="logo_kantor.png" alt="Logo Kecamatan">
+                <div class="logo-text">
+                    <h1>Kantor Kecamatan</h1>
+                    <p>Siberut Selatan</p>
+                </div>
+            </div>
+            <div class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="tentang.html">Tentang</a></li>
+                    <li><a href="struktur.html" class="active">Struktur</a></li>
+                    <li><a href="pegawai.html">Pegawai</a></li>
+                    <li><a href="dokumentasi.html">Dokumentasi</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Struktur Organisasi</h1>
+            <p>Struktur kepengurusan dan tata kelola Kantor Kecamatan Siberut Selatan</p>
+        </div>
+    </section>
+
+    <!-- Struktur Organisasi -->
+    <section class="struktur">
+        <div class="container">
+            <div class="org-chart">
+                <div class="chart-container">
+                    <div class="org-level-1">
+                        <div class="person">
+                            <h4>Camat Siberut Selatan</h4>
+                            <p>HIJON, S.Pd.SD</p>
+                            <p>ESELON III.A</p>
+                        </div>
+                        <div class="chart-line"></div>
+                    </div>
+                    
+                    <div class="org-level-2">
+                        <div class="person">
+                            <h4>Sekretaris Camat</h4>
+                            <p>YUSTINUS LALAOGOK,S.Pd.SD</p>
+                            <p>ESELON III.B</p>
+                        </div>
+                        
+                        <div class="person">
+                            <h4>Kepala Seksi Pemerintahan</h4>
+                            <p>SYAFRIL, S.Sos</p>
+                            <p>Penata Tingkat I (III/d)</p>
+                        </div>
+                        
+                        <div class="person">
+                            <h4>Kepala Seksi Kesejahteraan</h4>
+                            <p>DRA. SRI WAHYUNI</p>
+                            <p>Penata Tingkat I (III/d)</p>
+                        </div>
+                        
+                        <div class="person">
+                            <h4>Kepala Seksi Pelayanan</h4>
+                            <p>HENDRIK, S.IP</p>
+                            <p>Penata (III/c)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-line horizontal"></div>
+                    
+                    <div class="org-level-3">
+                        <div class="person">
+                            <h4>Kasubbag Umum & Kepegawaian</h4>
+                            <p>MIRA SARI, S.Sos</p>
+                            <p>Penata (III/c)</p>
+                        </div>
+                        
+                        <div class="person">
+                            <h4>Kasubbag Perencanaan</h4>
+                            <p>AGUS SALIM, S.E.</p>
+                            <p>Penata (III/c)</p>
+                        </div>
+                        
+                        <div class="person">
+                            <h4>Kaur TU & Protokol</h4>
+                            <p>SRI MULYATI, A.Md.</p>
+                            <p>Penata Muda Tingkat I (III/b)</p>
+                        </div>
+                        
+                        <div class="person">
+                            <h4>Staf Administrasi</h4>
+                            <p>RIKI ANDIKA, S.AP</p>
+                            <p>Penata Muda (III/a)</p>
+                        </div>
+                        
+                        <div class="person">
+                            <h4>Staf Teknis</h4>
+                            <p>ANDI PRASETYA, S.T.</p>
+                            <p>Penata Muda (III/a)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="struktur-details">
+                <h2 class="section-title">Deskripsi Jabatan</h2>
+                
+                <div class="detail-card">
+                    <h3><i class="fas fa-user-tie"></i> Camat</h3>
+                    <p>Bertanggung jawab atas penyelenggaraan pemerintahan di wilayah Kecamatan Siberut Selatan. Tugas dan wewenang Camat meliputi:</p>
+                    <ul>
+                        <li>Memimpin penyelenggaraan pemerintahan kecamatan berdasarkan kebijakan yang ditetapkan Bupati</li>
+                        <li>Mengkoordinasikan pembangunan kecamatan</li>
+                        <li>Mengkoordinasikan pemberdayaan masyarakat</li>
+                        <li>Melaksanakan tugas pemerintahan lainnya sesuai dengan peraturan perundang-undangan</li>
+                    </ul>
+                </div>
+                
+                <div class="detail-card">
+                    <h3><i class="fas fa-users-cog"></i> Sekretaris Camat</h3>
+                    <p>Membantu Camat dalam bidang administrasi pemerintahan. Tugas dan wewenang Sekretaris Camat meliputi:</p>
+                    <ul>
+                        <li>Membantu Camat dalam menyelenggarakan administrasi pemerintahan</li>
+                        <li>Membina dan mengkoordinasikan pelaksanaan tugas perangkat kecamatan</li>
+                        <li>Menyelenggarakan administrasi umum, kepegawaian, keuangan, dan perlengkapan</li>
+                        <li>Melaksanakan tugas lain yang diberikan oleh Camat</li>
+                    </ul>
+                </div>
+                
+                <div class="detail-card">
+                    <h3><i class="fas fa-building"></i> Kepala Seksi</h3>
+                    <p>Masing-masing Kepala Seksi bertanggung jawab atas bidangnya sesuai dengan tugas pokok dan fungsi:</p>
+                    <ul>
+                        <li><strong>Seksi Pemerintahan:</strong> Menangani urusan pemerintahan, ketenteraman, dan ketertiban</li>
+                        <li><strong>Seksi Kesejahteraan:</strong> Menangani urusan kesejahteraan rakyat, pendidikan, dan kesehatan</li>
+                        <li><strong>Seksi Pelayanan:</strong> Menangani pelayanan masyarakat, perizinan, dan administrasi kependudukan</li>
+                    </ul>
+                </div>
+                
+                <div class="detail-card">
+                    <h3><i class="fas fa-clipboard-list"></i> Kepala Sub Bagian</h3>
+                    <p>Bertanggung jawab atas pelaksanaan tugas di sub bagian masing-masing:</p>
+                    <ul>
+                        <li><strong>Subbag Umum & Kepegawaian:</strong> Menangani administrasi umum, kepegawaian, dan rumah tangga kantor</li>
+                        <li><strong>Subbag Perencanaan:</strong> Menyusun rencana dan program pembangunan kecamatan</li>
+                        <li><strong>Urusan TU & Protokol:</strong> Menangani tata usaha dan protokol kecamatan</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="logo_kantor.png" alt="Logo Kecamatan">
+                        <div class="footer-logo-text">
+                            <h3>Kantor Kecamatan</h3>
+                            <p>Siberut Selatan</p>
+                        </div>
+                    </div>
+                    <p>Melayani masyarakat dengan integritas, profesionalisme, dan dedikasi tinggi untuk kemajuan Siberut Selatan.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Link Cepat</h4>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="tentang.html">Tentang Kami</a></li>
+                        <li><a href="struktur.html">Struktur Organisasi</a></li>
+                        <li><a href="pegawai.html">Data Pegawai</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Layanan</h4>
+                    <ul>
+                        <li><a href="#">Administrasi Kependudukan</a></li>
+                        <li><a href="#">Pelayanan Masyarakat</a></li>
+                        <li><a href="#">Perizinan & Non-Perizinan</a></li>
+                        <li><a href="#">Pengaduan Masyarakat</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Kontak Kami</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Jl. Raya Maileppet-Muara Siberut, Mentawai, Sumatera Barat</li>
+                        <li><i class="fas fa-phone"></i> (0759) 21017</li>
+                        <li><i class="fas fa-envelope"></i> siberutselatan@064@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Kantor Kecamatan Siberut Selatan. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

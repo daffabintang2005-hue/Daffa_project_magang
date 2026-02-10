@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak & Lokasi - Kantor Kecamatan Siberut Selatan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="kontak.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-logo">
+                <img src="logo_kantor.png" alt="Logo Kecamatan">
+                <div class="logo-text">
+                    <h1>Kantor Kecamatan</h1>
+                    <p>Siberut Selatan</p>
+                </div>
+            </div>
+            <div class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="tentang.html">Tentang</a></li>
+                    <li><a href="struktur.html">Struktur</a></li>
+                    <li><a href="pegawai.html">Pegawai</a></li>
+                    <li><a href="dokumentasi.html">Dokumentasi</a></li>
+                    <li><a href="kontak.html" class="active">Kontak</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Kontak & Lokasi</h1>
+            <p>Informasi alamat, kontak, dan lokasi Kantor Kecamatan Siberut Selatan</p>
+        </div>
+    </section>
+
+    <!-- Kontak Section -->
+    <section class="kontak">
+        <div class="container">
+            <div class="kontak-grid">
+                <div class="kontak-info">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Alamat Kantor</h3>
+                            <p>Jl. Raya Siberut Selatan, Desa Maileppet, Kecamatan Siberut Selatan, Kabupaten Kepulauan Mentawai, Sumatera Barat, Indonesia</p>
+                            <a href="https://maps.google.com/?q=Kantor+Kecamatan+Siberut+Selatan" target="_blank" class="btn-link">Lihat di Google Maps <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Telepon</h3>
+                            <p>Telepon: (0759) 21017</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Email</h3>
+                            <p>Email: siberutselatan@064@gmail.com</p>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Jam Pelayanan</h3>
+                            <p>Senin - Kamis: 08.00 - 16.00 WIB</p>
+                            <p>Jumat: 08.00 - 11.00 WIB</p>
+                            <p class="note">Kecuali hari libur nasional</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="kontak-form">
+                    <h2 class="section-title">Kirim Pesan</h2>
+                    <p class="form-subtitle">Silakan hubungi kami melalui formulir di bawah ini</p>
+                    
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nama Lengkap *</label>
+                            <input type="text" id="name" name="name" required>
+                            <div class="error-message" id="nameError"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                            <div class="error-message" id="emailError"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Nomor Telepon</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subjek *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Pilih Subjek</option>
+                                <option value="pelayanan">Pelayanan Administrasi</option>
+                                <option value="pengaduan">Pengaduan Masyarakat</option>
+                                <option value="informasi">Permintaan Informasi</option>
+                                <option value="kerjasama">Kerjasama</option>
+                                <option value="lainnya">Lainnya</option>
+                            </select>
+                            <div class="error-message" id="subjectError"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Pesan *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <div class="error-message" id="messageError"></div>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary">Kirim Pesan</button>
+                    </form>
+                    
+                    <div id="successMessage" class="success-message">
+                        <i class="fas fa-check-circle"></i>
+                        <p>Pesan Anda telah berhasil dikirim. Kami akan membalas secepatnya melalui email.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Map Section -->
+            <div class="map-section">
+                <h2 class="section-title">Lokasi Kantor</h2>
+                <p class="section-subtitle">Kantor Kecamatan Siberut Selatan berada di pusat pemerintahan kecamatan</p>
+                
+                <div class="map-container">
+                    <div class="map-placeholder" id="mapPlaceholder">
+                        <div class="placeholder-content">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <h3>Lokasi Kantor Kecamatan Siberut Selatan</h3>
+                            <p>Klik tombol di bawah untuk melihat lokasi di Google Maps</p>
+                            <a href="https://maps.app.goo.gl/pgyqPFSSRhBMAV688" target="_blank" class="btn-primary">Buka Google Maps</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="map-instructions">
+                    <div class="instruction">
+                        <i class="fas fa-car"></i>
+                        <h4>Akses dengan Kendaraan</h4>
+                        <p>Dari Pelabuhan Muara Siberut, ikuti jalan utama ke arah selatan sekitar 15 km.</p>
+                    </div>
+                    <div class="instruction">
+                        <i class="fas fa-bus"></i>
+                        <h4>Transportasi Umum</h4>
+                        <p>Tersedia angkutan umum dari Pelabuhan Muara Siberut menuju Kantor Kecamatan.</p>
+                </div>
+            </div>
+            
+            <!-- Desa di Kecamatan -->
+            <div class="desa-section">
+                <h2 class="section-title">Desa di Kecamatan Siberut Selatan</h2>
+                <p class="section-subtitle">Berikut adalah 8 desa yang ada di wilayah Kecamatan Siberut Selatan</p>
+                
+                <div class="desa-grid">
+                    <div class="desa-card">
+                        <h4>Desa Maileppet</h4>
+                        <p>Ibu Kota Kecamatan</p>
+                        <span class="desa-population">2.345 Jiwa</span>
+                    </div>
+                    <div class="desa-card">
+                        <h4>Desa Matotonan</h4>
+                        <p>Desa Pesisir</p>
+                        <span class="desa-population">1.890 Jiwa</span>
+                    </div>
+                    <div class="desa-card">
+                        <h4>Desa Saibu</h4>
+                        <p>Desa Agraris</p>
+                        <span class="desa-population">1.560 Jiwa</span>
+                    </div>
+                    <div class="desa-card">
+                        <h4>Desa Saliguma</h4>
+                        <p>Desa Nelayan</p>
+                        <span class="desa-population">2.120 Jiwa</span>
+                    </div>
+                    <div class="desa-card">
+                        <h4>Desa Silaoinan</h4>
+                        <p>Desa Pertanian</p>
+                        <span class="desa-population">1.780 Jiwa</span>
+                    </div>
+                    <div class="desa-card">
+                        <h4>Desa Simatalu</h4>
+                        <p>Desa Perkebunan</p>
+                        <span class="desa-population">1.950 Jiwa</span>
+                    </div>
+                    <div class="desa-card">
+                        <h4>Desa Sirimuri</h4>
+                        <p>Desa Adat</p>
+                        <span class="desa-population">1.670 Jiwa</span>
+                    </div>
+                    <div class="desa-card">
+                        <h4>Desa Sotboyak</h4>
+                        <p>Desa Wisata</p>
+                        <span class="desa-population">1.920 Jiwa</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="logo_kantor.png" alt="Logo Kecamatan">
+                        <div class="footer-logo-text">
+                            <h3>Kantor Kecamatan</h3>
+                            <p>Siberut Selatan</p>
+                        </div>
+                    </div>
+                    <p>Melayani masyarakat dengan integritas, profesionalisme, dan dedikasi tinggi untuk kemajuan Siberut Selatan.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Link Cepat</h4>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="tentang.html">Tentang Kami</a></li>
+                        <li><a href="struktur.html">Struktur Organisasi</a></li>
+                        <li><a href="pegawai.html">Data Pegawai</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Layanan</h4>
+                    <ul>
+                        <li><a href="#">Administrasi Kependudukan</a></li>
+                        <li><a href="#">Pelayanan Masyarakat</a></li>
+                        <li><a href="#">Perizinan & Non-Perizinan</a></li>
+                        <li><a href="#">Pengaduan Masyarakat</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Kontak Kami</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Jl. Raya Maileppet-Muara Siberut, Mentawai, Sumatera Barat</li>
+                        <li><i class="fas fa-phone"></i> (0759) 21017</li>
+                        <li><i class="fas fa-envelope"></i> siberutselatan@064@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Kantor Kecamatan Siberut Selatan. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="kontak.js"></script>
+</body>
+</html>
