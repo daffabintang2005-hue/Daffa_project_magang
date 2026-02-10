@@ -199,7 +199,7 @@
 
 .map-placeholder {
     height: 400px;
-    background: linear-gradient(rgba(46, 125, 50, 0.9), rgba(46, 125, 50, 0.8)), url('1.jpeg');
+    background: linear-gradient(rgba(46, 125, 50, 0.9), rgba(46, 125, 50, 0.8)), url('gambar1.jpeg');
     background-size: cover;
     background-position: center;
     display: flex;
