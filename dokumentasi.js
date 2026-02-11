@@ -55,11 +55,11 @@ document.addEventListener('DOMContentLoaded', function() {
                         date: '9 februari 2026'
                     },
                     {
-                        category: 'pelayanan',
-                        image: 'https://images.unsplash.com/photo-1551836026-d5c2c0b4d4f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
-                        title: 'Pelayanan Kesehatan Gratis',
-                        desc: 'Kegiatan pelayanan kesehatan gratis untuk masyarakat kurang mampu',
-                        date: '5 Juli 2023'
+                        category: 'kegiatan',
+                        image: 'dk10.jpeg',
+                        title: '',
+                        desc: '',
+                        date: '9 Februari 2026'
                     },
                     {
                         category: 'pembangunan',
