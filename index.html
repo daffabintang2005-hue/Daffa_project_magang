@@ -7,6 +7,137 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Dark Mode Toggle */
+        .dark-mode-toggle {
+            margin-left: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .dark-mode-toggle input[type="checkbox"] {
+            display: none;
+        }
+
+        .toggle-label {
+            position: relative;
+            width: 50px;
+            height: 24px;
+            background-color: #ccc;
+            border-radius: 24px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .dark-mode-toggle input[type="checkbox"]:checked + .toggle-label {
+            background-color: #2E7D32;
+        }
+
+        .dark-mode-toggle input[type="checkbox"]:checked + .toggle-label .toggle-slider {
+            transform: translateX(26px);
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .navbar {
+            background-color: #1e1e1e;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        body.dark-mode .nav-menu a {
+            background: #2e2e2e;
+            border-color: #4CAF50;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .nav-menu a:hover {
+            background-color: #3e3e3e;
+            color: #4CAF50;
+        }
+
+        body.dark-mode .nav-menu a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        body.dark-mode .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2e2e2e 100%);
+        }
+
+        body.dark-mode .layanan {
+            background-color: #1a1a1a;
+        }
+
+        body.dark-mode .layanan-card {
+            background: #2e2e2e;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .layanan-card h3 {
+            color: #4CAF50;
+        }
+
+        body.dark-mode .pengumuman {
+            background-color: #1a1a1a;
+        }
+
+        body.dark-mode .pengumuman-slider {
+            background: #2e2e2e;
+        }
+
+        body.dark-mode .pengumuman-content h3 {
+            color: #4CAF50;
+        }
+
+        body.dark-mode .footer {
+            background-color: #1e1e1e;
+        }
+
+        body.dark-mode .footer-col a:hover {
+            color: #4CAF50;
+        }
+
+        body.dark-mode .btn-primary {
+            background-color: #4CAF50;
+        }
+
+        body.dark-mode .btn-primary:hover {
+            background-color: #66BB6A;
+        }
+
+        body.dark-mode .btn-secondary {
+            background-color: transparent;
+            color: #4CAF50;
+            border-color: #4CAF50;
+        }
+
+        body.dark-mode .btn-secondary:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        /* Responsive for toggle */
+        @media (max-width: 768px) {
+            .dark-mode-toggle {
+                margin-left: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -17,6 +148,12 @@
                 <div class="logo-text">
                     <h1>Kantor Kecamatan</h1>
                     <p>Siberut Selatan</p>
+                </div>
+                <div class="dark-mode-toggle">
+                    <input type="checkbox" id="dark-mode-checkbox">
+                    <label for="dark-mode-checkbox" class="toggle-label">
+                        <span class="toggle-slider"></span>
+                    </label>
                 </div>
             </div>
             <div class="nav-menu">
