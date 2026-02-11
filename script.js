@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Dark Mode Toggle
-    const darkModeToggle = document.getElementById('dark-mode-checkbox');
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
     const body = document.body;
 
     // Check for saved dark mode preference
@@ -214,4 +214,70 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Search functionality
+    const searchInput = document.getElementById('search-input');
+    const searchBtn = document.getElementById('search-btn');
+
+    if (searchInput && searchBtn) {
+        // Search on button click
+        searchBtn.addEventListener('click', performSearch);
+
+        // Search on Enter key press
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+    }
+
+    function performSearch() {
+        const query = searchInput.value.toLowerCase().trim();
+        if (!query) return;
+
+        // Get all sections and their content
+        const sections = document.querySelectorAll('section');
+        let found = false;
+
+        for (let section of sections) {
+            const textContent = section.textContent.toLowerCase();
+            if (textContent.includes(query)) {
+                // Scroll to the section
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                // Highlight the section temporarily
+                section.style.backgroundColor = 'rgba(76, 175, 80, 0.1)';
+                setTimeout(() => {
+                    section.style.backgroundColor = '';
+                }, 3000);
+
+                found = true;
+                break;
+            }
+        }
+
+        if (!found) {
+            // If no section found, search in all text elements
+            const allTextElements = document.querySelectorAll('h1, h2, h3, h4, p, li');
+            for (let element of allTextElements) {
+                if (element.textContent.toLowerCase().includes(query)) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                    // Highlight the element temporarily
+                    const originalColor = element.style.backgroundColor;
+                    element.style.backgroundColor = 'rgba(76, 175, 80, 0.2)';
+                    setTimeout(() => {
+                        element.style.backgroundColor = originalColor;
+                    }, 3000);
+
+                    found = true;
+                    break;
+                }
+            }
+        }
+
+        if (!found) {
+            alert('Pencarian "' + query + '" tidak ditemukan.');
+        }
+    }
 });
