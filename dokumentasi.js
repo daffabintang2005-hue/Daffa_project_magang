@@ -57,16 +57,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     {
                         category: 'kegiatan',
                         image: 'dk10.jpeg',
-                        title: '',
+                        title: 'Kegiatan Rapat',
                         desc: '',
                         date: '9 Februari 2026'
                     },
                     {
                         category: 'pembangunan',
-                        image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=773&q=80',
-                        title: 'Perbaikan Sarana Ibadah',
-                        desc: 'Kegiatan perbaikan masjid di Desa Saliguma',
-                        date: '30 Juni 2023'
+                        image: 'dk11.jpeg',
+                        title: 'Kegiatan Pagi',
+                        desc: 'Melaksanakan Apel Pagi',
+                        date: '9 Februari 2026'
                     }
                 ];
                 
