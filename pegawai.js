@@ -262,23 +262,19 @@ document.addEventListener('DOMContentLoaded', function() {
             tableBody.appendChild(row);
         });
         
-        // Update pagination buttons
         updatePagination();
     }
     
-    // Filter data based on search and filters
     function filterData() {
         const searchTerm = searchInput.value.toLowerCase();
         const jabatanValue = jabatanFilter.value;
         const golonganValue = golonganFilter.value;
         
         filteredData = pegawaiData.filter(pegawai => {
-            // Search filter
             const matchesSearch = pegawai.nama.toLowerCase().includes(searchTerm) ||
                                  pegawai.nip.toLowerCase().includes(searchTerm) ||
                                  pegawai.jabatan.toLowerCase().includes(searchTerm);
             
-            // Jabatan filter
             const matchesJabatan = jabatanValue === 'all' || 
                                   (jabatanValue === 'camat' && pegawai.jabatan.includes('Camat')) ||
                                   (jabatanValue === 'sekretaris' && pegawai.jabatan.includes('Sekretaris')) ||
@@ -286,7 +282,6 @@ document.addEventListener('DOMContentLoaded', function() {
                                   (jabatanValue === 'staff' && !pegawai.jabatan.includes('Camat') && 
                                    !pegawai.jabatan.includes('Sekretaris') && !pegawai.jabatan.includes('Seksi'));
             
-            // Golongan filter
             const matchesGolongan = golonganValue === 'all' || 
                                    (golonganValue === 'IV' && pegawai.golongan && pegawai.golongan.startsWith('IV')) ||
                                    (golonganValue === 'III' && pegawai.golongan && pegawai.golongan.startsWith('III')) ||
@@ -300,7 +295,6 @@ document.addEventListener('DOMContentLoaded', function() {
         renderTable();
     }
     
-    // Update pagination controls
     function updatePagination() {
         const totalPages = Math.ceil(filteredData.length / rowsPerPage);
         
@@ -315,12 +309,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Update buttons
         prevBtn.disabled = currentPage === 1;
         nextBtn.disabled = currentPage === totalPages || totalPages === 0;
     }
     
-    // Event Listeners
     searchInput.addEventListener('input', filterData);
     jabatanFilter.addEventListener('change', filterData);
     golonganFilter.addEventListener('change', filterData);
@@ -340,7 +332,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Page number click
     pageNumbers.forEach(page => {
         page.addEventListener('click', function() {
             const pageNum = parseInt(this.textContent);
@@ -351,10 +342,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Initial render
     renderTable();
     
-    // Add animation to table rows
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -364,7 +353,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, { threshold: 0.1 });
     
-    // Observe table rows after they're rendered
     setTimeout(() => {
         document.querySelectorAll('.pegawai-row').forEach(row => {
             row.style.opacity = '0';

@@ -1,4 +1,4 @@
-/* Dokumentasi Page Styles */
+
 .dokumentasi {
     padding: 60px 0;
 }
@@ -118,7 +118,6 @@
     text-align: center;
 }
 
-/* Modal Styles */
 .modal {
     display: none;
     position: fixed;

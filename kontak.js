@@ -1,6 +1,6 @@
 // Kontak Page JavaScript
 document.addEventListener('DOMContentLoaded', function() {
-    // Form validation and submission
+
     const contactForm = document.getElementById('contactForm');
     const successMessage = document.getElementById('successMessage');
     
@@ -8,24 +8,19 @@ document.addEventListener('DOMContentLoaded', function() {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Reset previous errors
             clearErrors();
             
-            // Validate form
             const isValid = validateForm();
             
             if (isValid) {
-                // Simulate form submission
                 simulateFormSubmission();
             }
         });
     }
     
-    // Form validation function
     function validateForm() {
         let isValid = true;
         
-        // Name validation
         const nameInput = document.getElementById('name');
         if (!nameInput.value.trim()) {
             showError('nameError', 'Nama lengkap harus diisi');
@@ -37,7 +32,6 @@ document.addEventListener('DOMContentLoaded', function() {
             isValid = false;
         }
         
-        // Email validation
         const emailInput = document.getElementById('email');
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailInput.value.trim()) {
@@ -50,7 +44,6 @@ document.addEventListener('DOMContentLoaded', function() {
             isValid = false;
         }
         
-        // Subject validation
         const subjectSelect = document.getElementById('subject');
         if (!subjectSelect.value) {
             showError('subjectError', 'Subjek harus dipilih');
@@ -58,7 +51,6 @@ document.addEventListener('DOMContentLoaded', function() {
             isValid = false;
         }
         
-        // Message validation
         const messageInput = document.getElementById('message');
         if (!messageInput.value.trim()) {
             showError('messageError', 'Pesan harus diisi');
@@ -73,13 +65,11 @@ document.addEventListener('DOMContentLoaded', function() {
         return isValid;
     }
     
-    // Show error message
     function showError(elementId, message) {
         const errorElement = document.getElementById(elementId);
         errorElement.textContent = message;
     }
     
-    // Clear all error messages
     function clearErrors() {
         const errorElements = document.querySelectorAll('.error-message');
         errorElements.forEach(element => {
@@ -92,27 +82,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Simulate form submission
     function simulateFormSubmission() {
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
         
-        // Show loading state
+       
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
         submitBtn.disabled = true;
         
-        // Simulate API call delay
         setTimeout(() => {
-            // Hide form
+            
             contactForm.style.display = 'none';
             
-            // Show success message
             successMessage.style.display = 'block';
             
-            // Reset form
             contactForm.reset();
             
-            // Reset button after 5 seconds
             setTimeout(() => {
                 contactForm.style.display = 'block';
                 successMessage.style.display = 'none';
@@ -122,14 +107,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 2000);
     }
     
-    // Google Maps interaction
     const mapPlaceholder = document.getElementById('mapPlaceholder');
     if (mapPlaceholder) {
         mapPlaceholder.addEventListener('click', function() {
             window.open('https://maps.app.goo.gl/pgyqPFSSRhBMAV688', '_blank');
         });
         
-        // Add hover effect
         mapPlaceholder.style.cursor = 'pointer';
         mapPlaceholder.addEventListener('mouseenter', function() {
             this.style.transform = 'scale(1.01)';
@@ -141,7 +124,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Animate info cards on scroll
     const infoCards = document.querySelectorAll('.info-card');
     const observerOptions = {
         threshold: 0.1,
@@ -164,7 +146,6 @@ document.addEventListener('DOMContentLoaded', function() {
         cardObserver.observe(card);
     });
     
-    // Animate desa cards
     const desaCards = document.querySelectorAll('.desa-card');
     desaCards.forEach((card, index) => {
         card.style.opacity = '0';
@@ -183,7 +164,6 @@ document.addEventListener('DOMContentLoaded', function() {
         desaObserver.observe(card);
     });
     
-    // Add interactive effect to map instructions
     const instructions = document.querySelectorAll('.instruction');
     instructions.forEach(instruction => {
         instruction.addEventListener('mouseenter', function() {
@@ -197,15 +177,13 @@ document.addEventListener('DOMContentLoaded', function() {
             icon.style.transform = 'scale(1)';
         });
     });
-    
-    // Phone number formatting
+
     const phoneInput = document.getElementById('phone');
     if (phoneInput) {
         phoneInput.addEventListener('input', function() {
-            // Remove non-numeric characters
+    
             let value = this.value.replace(/\D/g, '');
             
-            // Format as Indonesian phone number
             if (value.length > 0) {
                 if (value.length <= 4) {
                     value = value;

@@ -1,20 +1,17 @@
 // Dokumentasi Page JavaScript
 document.addEventListener('DOMContentLoaded', function() {
-    // Filter functionality
     const filterButtons = document.querySelectorAll('.filter-btn');
     const dokumentasiItems = document.querySelectorAll('.dokumentasi-item');
     
     filterButtons.forEach(button => {
         button.addEventListener('click', function() {
-            // Remove active class from all buttons
+
             filterButtons.forEach(btn => btn.classList.remove('active'));
             
-            // Add active class to clicked button
             this.classList.add('active');
             
             const filterValue = this.getAttribute('data-filter');
             
-            // Show/hide items based on filter
             dokumentasiItems.forEach(item => {
                 if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
                     item.style.display = 'block';
@@ -33,19 +30,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Load more functionality
     const loadMoreBtn = document.getElementById('loadMore');
     if (loadMoreBtn) {
         loadMoreBtn.addEventListener('click', function() {
-            // Create additional items (simulating loading more)
             const dokumentasiGrid = document.querySelector('.dokumentasi-grid');
             
-            // Simulate loading with timeout
             this.innerHTML = 'Memuat...';
             this.disabled = true;
             
             setTimeout(() => {
-                // Add more items (in a real app, this would be an API call)
                 const newItems = [
                     {
                         category: 'kegiatan',
@@ -70,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 ];
                 
-                // Add new items to the grid
                 newItems.forEach(item => {
                     const itemElement = document.createElement('div');
                     itemElement.className = 'dokumentasi-item animate-on-scroll';
@@ -92,18 +84,15 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     dokumentasiGrid.appendChild(itemElement);
                     
-                    // Add click event for modal to new items
                     const newImage = itemElement.querySelector('.dokumentasi-image');
                     newImage.addEventListener('click', function() {
                         openModal(item.image, item.title, item.desc, item.date);
                     });
                 });
                 
-                // Reset button
                 this.innerHTML = 'Tampilkan Lebih Banyak';
                 this.disabled = false;
                 
-                // Trigger scroll animation for new items
                 const newAnimateItems = document.querySelectorAll('.animate-on-scroll');
                 const observer = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
@@ -115,7 +104,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 newAnimateItems.forEach(item => observer.observe(item));
                 
-                // Hide button after all items loaded (simulation)
                 if (dokumentasiItems.length >= 12) {
                     this.style.display = 'none';
                 }
@@ -123,8 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 1500);
         });
     }
-    
-    // Modal functionality
+
     const modal = document.getElementById('imageModal');
     const modalImage = document.getElementById('modalImage');
     const modalTitle = document.getElementById('modalTitle');
@@ -132,7 +119,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalDate = document.getElementById('modalDate');
     const closeModalBtn = document.querySelector('.close-modal');
     
-    // Function to open modal
     function openModal(imageSrc, title, description, date) {
         modalImage.src = imageSrc;
         modalImage.alt = title;
@@ -141,11 +127,9 @@ document.addEventListener('DOMContentLoaded', function() {
         modalDate.textContent = date;
         modal.style.display = 'flex';
         
-        // Prevent body scroll when modal is open
         document.body.style.overflow = 'hidden';
     }
-    
-    // Add click event to all dokumentasi images
+
     document.querySelectorAll('.dokumentasi-image').forEach(image => {
         image.addEventListener('click', function() {
             const item = this.closest('.dokumentasi-item');
@@ -158,13 +142,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Close modal when clicking X
     closeModalBtn.addEventListener('click', function() {
         modal.style.display = 'none';
         document.body.style.overflow = 'auto';
     });
     
-    // Close modal when clicking outside the image
     modal.addEventListener('click', function(e) {
         if (e.target === modal) {
             modal.style.display = 'none';
@@ -172,7 +154,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Close modal with ESC key
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && modal.style.display === 'flex') {
             modal.style.display = 'none';
@@ -180,7 +161,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Initialize animations for dokumentasi items
     const dokumentasiObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
