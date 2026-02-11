@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const newItems = [
                     {
                         category: 'kegiatan',
-                        image: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+                        image: 'dk9.jpeg',
                         title: 'Pelatihan Wirausaha Masyarakat',
                         desc: 'Pelatihan keterampilan wirausaha untuk pemuda di Kecamatan Siberut Selatan',
                         date: '10 Juli 2023'
