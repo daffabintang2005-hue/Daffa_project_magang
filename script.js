@@ -196,12 +196,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Page transition effects
     window.addEventListener('load', function() {
         document.body.classList.add('loaded');
     });
 
-    // Smooth page transitions for navigation links
     document.querySelectorAll('.nav-menu a').forEach(link => {
         link.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
@@ -257,13 +255,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if (!found) {
-            // If no section found, search in all text elements
             const allTextElements = document.querySelectorAll('h1, h2, h3, h4, p, li');
             for (let element of allTextElements) {
                 if (element.textContent.toLowerCase().includes(query)) {
                     element.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-                    // Highlight the element temporarily
                     const originalColor = element.style.backgroundColor;
                     element.style.backgroundColor = 'rgba(76, 175, 80, 0.2)';
                     setTimeout(() => {
